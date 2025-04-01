@@ -1,21 +1,20 @@
 import React, { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
+import { motion } from "framer-motion";
 
 const ContactForm = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
   const [success, setSuccess] = useState("");
-  const handleName = (e) => {
-    setName(e.target.value);
-  };
-  const handleEmail = (e) => {
-    setEmail(e.target.value);
-  };
-  const handleMessage = (e) => {
-    setMessage(e.target.value);
-  };
+  const [sent, setSent] = useState(false);
+  
+  const handleName = (e) => setName(e.target.value);
+  const handleEmail = (e) => setEmail(e.target.value);
+  const handleMessage = (e) => setMessage(e.target.value);
+  
   const form = useRef();
+  
   const sendEmail = (e) => {
     e.preventDefault();
     emailjs
@@ -27,7 +26,9 @@ const ContactForm = () => {
           setEmail("");
           setName("");
           setMessage("");
-          setSuccess("Message Sent Succesfully");
+          setSuccess("Message Sent Successfully");
+          setSent(true);
+          setTimeout(() => setSent(false), 2000);
         },
         (error) => {
           console.log("FAILED...", error.text);
@@ -64,16 +65,18 @@ const ContactForm = () => {
           cols="50"
           placeholder="Message"
           required
-          className=" rounded-lg bg-lightBrown p-2"
+          className="rounded-lg bg-lightBrown p-2"
           value={message}
           onChange={handleMessage}
         />
-        <button
+        <motion.button
           type="submit"
           className="w-full rounded-lg border border-cyan text-white h-12 font-bold text-xl hover:bg-darkCyan bg-cyan transition-all duration-500"
+          animate={sent ? { x: 300, y: -200, opacity: 0, rotate: 45 } : {}}
+          transition={{ duration: 1 }}
         >
-          Send
-        </button>
+          {sent ? "✈️" : "Send"}
+        </motion.button>
       </form>
     </div>
   );

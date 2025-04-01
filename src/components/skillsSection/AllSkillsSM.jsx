@@ -21,7 +21,7 @@ const AllSkillsSM = () => {
   return (
     <div className="grid md:grid-cols-4 sm:grid-cols-2 gap-12 my-12">
       {skills.map((item, index) => {
-        const IconComponent = item.icon; // Assigning icon to a variable to use properly in JSX
+        const IconComponent = item.icon; 
         return (
           <motion.div
             key={index}

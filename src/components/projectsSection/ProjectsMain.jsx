@@ -8,22 +8,29 @@ const projects = [
     name: "Wakefit Furniture (E-Commerce)",
     year: "Oct 2024 – Dec 2024",
     align: "right",
-    image: "../../public/images/wakefitbg.png",
-    link: "https://github.com/kunalk276/Full-Stack-Wakefit-Furniture-BackEnd",
+    image: "/images/wakefitbg.png",
+    link: "https://mywakefit.vercel.app/home",
   },
+  {
+    name: "ExploreEase (Travel Booking Platform)",
+    year: "Feb 2025 – Mar 2025",
+    align: "left",
+    image: "/images/exploreeasebg.png",
+    link: "https://explore-ease-travel-planner.vercel.app/"
+},
   {
     name: "GoNow (Cab Booking)",
     year: "Sept 2023 – Nov 2023",
-    align: "left",
-    image: "../../public/images/gonow.png",
-    link: "https://github.com/kunalk276/Go-Now-Car-Rental",
+    align: "right",
+    image: "/images/gonow.png",
+    link: "https://github.com/kunalk276/Go-Now-Car-Rental/blob/main/README.md",
   },
   {
     name: "Restaurant Review Sentiment Analysis",
     year: "Nov 2023 – Mar 2024",
-    align: "right",
-    image: "../../public/images/sentiment-analysis.png",
-    link: "https://github.com/kunalk276/restaurant-review-analysis",
+    align: "left",
+    image: "/images/sentiment-analysis.png",
+    link: "https://github.com/kunalk276/restaurant-review-analysis/blob/main/README.md",
   },
 ];
 
